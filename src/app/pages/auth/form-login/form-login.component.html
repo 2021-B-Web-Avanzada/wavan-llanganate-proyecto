@@ -1,0 +1,30 @@
+<section class="form-section">
+    <mat-card class="form-card">
+        <mat-card-title class="form-title">{{ options.label}}</mat-card-title>
+        <form class="example-form" (ngSubmit)="onSubmit()" [formGroup]="authForm">
+            <mat-form-field class="form-input" appearance="legacy">
+                <mat-label>Correo electrónico</mat-label>
+                <input formControlName="email" aria-label="email" matInput placeholder="ejemplo@example.com" required>
+            </mat-form-field>
+            <mat-form-field class="form-input" appearance="legacy">
+                <mat-label>Contraseña</mat-label>
+                <input formControlName="password" aria-label="password" matInput [type]="hide ? 'password' : 'text'">
+                <button mat-button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+            <div>
+                <button type="submit" class="form-button" mat-raised-button color="primary">{{ options.label}}</button>
+            </div>
+            <div class="form-nav">
+                <ng-container *ngIf="options.id === signin ; else showSignTemplate">
+                    <a class="nav-link" aria-current="page" [routerLink]="['/sign-up']">Crear una nueva cuenta.</a>
+                </ng-container>
+                <ng-template #showSignTemplate>
+                    <a class="nav-link" aria-current="page" [routerLink]="['/sign-in']">¿Tienes ya una cuenta? Ingresa aquí.</a>
+                </ng-template>                
+            </div>
+        </form>
+    </mat-card>
+</section>

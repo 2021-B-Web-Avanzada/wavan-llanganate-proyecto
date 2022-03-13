@@ -1,0 +1,33 @@
+<mat-card class="form-card">
+    <mat-card-title class="form-title">{{title}}</mat-card-title>
+   <p></p>
+    <form class="example-form" (ngSubmit)="onSubmit()" [formGroup]="form">
+        <mat-form-field class="form-input" appearance="fill">
+            <mat-label>Nombre del convenio</mat-label>
+            <input formControlName="nombre" aria-label="nombre" matInput>
+        </mat-form-field>
+        <mat-form-field class="form-input" appearance="fill">
+            <mat-label>Encargado</mat-label>
+            <input formControlName="encargado" aria-label="encargado"  matInput>
+        </mat-form-field>
+        <mat-form-field class="form-input" appearance="fill">
+            <mat-label>URL</mat-label>
+            <input formControlName="url" aria-label="url"  matInput>
+        </mat-form-field>
+        <mat-form-field class="form-input" appearance="fill">
+            <mat-label>Periodo</mat-label>
+            <input formControlName="periodo" aria-label="periodo" matInput>
+        </mat-form-field>
+        <mat-form-field class="form-input" appearance="fill">
+            <mat-label>Descripción</mat-label>
+            <input formControlName="descripcion" aria-label="descripcion" matInput>
+        </mat-form-field><mat-form-field class="form-input" appearance="fill">
+            <mat-label>Empresa</mat-label>
+            <input formControlName="empresa" aria-label="empresa" matInput>
+        </mat-form-field>
+
+        <div class="submit">
+            <button class="submit-button" type="submit" class="form-button" mat-raised-button color="primary">{{title}}</button>
+        </div>
+    </form>
+</mat-card>

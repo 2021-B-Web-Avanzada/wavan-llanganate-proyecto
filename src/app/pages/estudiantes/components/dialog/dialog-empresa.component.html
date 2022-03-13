@@ -1,0 +1,33 @@
+<mat-card class="form-card">
+    <mat-card-title class="form-title">{{title}}</mat-card-title>
+   <p></p>
+    <form class="example-form" (ngSubmit)="onSubmit()" [formGroup]="form">
+        <mat-form-field class="form-input" appearance="fill">
+            <mat-label>Nombres</mat-label>
+            <input formControlName="nombres" aria-label="nombres" matInput>
+        </mat-form-field>
+        <mat-form-field class="form-input" appearance="fill">
+            <mat-label>Apellidos</mat-label>
+            <input formControlName="apellidos" aria-label="apellidos"  matInput>
+        </mat-form-field>
+        <mat-form-field class="form-input" appearance="fill">
+            <mat-label>Email</mat-label>
+            <input formControlName="email" aria-label="email"  matInput>
+        </mat-form-field>
+        <mat-form-field class="form-input" appearance="fill">
+            <mat-label>CI</mat-label>
+            <input formControlName="ci" aria-label="ci" matInput>
+        </mat-form-field>
+        <mat-form-field class="form-input" appearance="fill">
+            <mat-label>Teléfono</mat-label>
+            <input formControlName="telefono" aria-label="telefono" matInput>
+        </mat-form-field>
+        <mat-form-field class="form-input" appearance="fill">
+            <mat-label>Código único</mat-label>
+            <input formControlName="codigo" aria-label="codigo" matInput>
+        </mat-form-field>
+        <div class="submit">
+            <button class="submit-button" type="submit" class="form-button" mat-raised-button color="primary">{{title}}</button>
+        </div>
+    </form>
+</mat-card>
